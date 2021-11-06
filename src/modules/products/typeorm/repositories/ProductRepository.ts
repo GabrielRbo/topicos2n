@@ -1,7 +1,8 @@
-import { Repository } from "typeorm";
+import { EntityRepository, Repository } from "typeorm";
 import Product from "../entities/Products";
 
 
+@EntityRepository(Product)
 class ProductRepository extends Repository<Product> {
 
     // Esta classe vai herdar todos os métodos de manipulação no banco de dados

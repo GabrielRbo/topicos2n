@@ -23,14 +23,6 @@ class Product {
     @CreateDateColumn()
     updated_at: Date
 
-
-
-
-    
-
-
-
-
 }
 
 

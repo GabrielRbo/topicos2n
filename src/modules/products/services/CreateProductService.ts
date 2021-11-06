@@ -1,6 +1,5 @@
-import { Request } from "express";
 import { getCustomRepository } from "typeorm";
-import AppError from "../../../shared/AppError";
+import AppError from "../../../shared/errors/AppError";
 import Product from "../typeorm/entities/Products";
 import ProductRepository from "../typeorm/repositories/ProductRepository";
 
@@ -20,10 +19,10 @@ class CreateProductService {
 
 
 // Método assincrono que recebe os dados do produto
-    public async execute({name, quantity, price}: IRequest): Promise<Product> {
+    public async execute({name, quantity, price}: IRequest): Promise<Product> {        
 
         const productRepository = getCustomRepository(ProductRepository)
-        const productExists = productRepository.findByName(name)
+        const productExists = await productRepository.findByName(name)
 
         if (productExists) {
 
