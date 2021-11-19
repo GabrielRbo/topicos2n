@@ -10,6 +10,4 @@ routes.use('/product', productRouter)
 
 routes.use('/user', userRouter)
 
-
-
 export default routes
